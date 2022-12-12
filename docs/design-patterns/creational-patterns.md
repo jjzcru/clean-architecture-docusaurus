@@ -17,9 +17,9 @@ more complex one. [^1]
 
 ## Factory Method
 
-This is a design pattern that provides an interface to create an object in a
-superclass, but enable subclasses to modify the type of objects that will
-be created.
+> Provides an interface to create an object in a
+> superclass, but enable subclasses to modify the type of objects that will
+> be created.
 
 It separates the process of creating an object from the code that depends
 on the interface of the object. [^2]
@@ -112,8 +112,9 @@ class GarbageTruckCreator extends Creator {
 
 ## Builder
 
-Is a design pattern that lets you construct complex objects step by step,
-it allows you to create different types and representations of an object
+> Construct complex objects step by step.
+
+It allows you to create different types and representations of an object
 using the same construction code.
 
 **Explanation**
