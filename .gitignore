@@ -109,3 +109,6 @@ dist
 # Docusaurus
 .docusaurus
 
+# VSCode
+.vscode
+
