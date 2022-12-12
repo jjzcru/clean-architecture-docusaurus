@@ -91,3 +91,108 @@ public class SQLRows<Type> implements Iterable<Type> {
 - Reduce the duplication of traversal code across the app
 - When you need your code to traverse different data structures or if you
   don't know the structure beforehand
+
+## Observer
+
+> Defines a subscription mechanism to notify multiple objects that events are
+> happening to the object that they are observing.
+
+**Explanation**
+
+This pattern is an implementation of the
+[Publish-Subscribe Pattern](https://ably.com/topic/pub-sub) at the code level,
+when you have an object that wants to be notified (subscriber) when another
+object changes its state (publisher), the first object creates a subscription
+that the second object is going to notify when a particular change happens.
+
+The reason for this is to avoid asking the target object all the time if its
+state has changed, we can invert the logic and let the target object notify
+all the objects that are interested in its state, when these changes happened,
+and what is the new state.
+
+The _target object_ is called a `Publisher` and the interesting object is
+the `Subscriber`, you can have multiple `Subscribers` follow a single
+`Publisher`. The publisher keeps track of all the `Subscribers` and lets them
+know when a state changes, `Subscribers` can also request to be removed from
+the `Subscriber` list.
+
+One real-life implementation for this would be an
+[Email Newsletter](https://www.campaignmonitor.com/resources/knowledge-base/what-is-an-email-newsletter/), in this analogy we
+the users are the `Subscribers` and the Newsletter would be the `Publisher`,
+as users we request to be added to the Newsletter and at the same time, we
+can request to be unsubscribed from that Newsletter when we no longer have
+any interested in them.
+
+**Structure**
+
+![Observer UML Diagram](./images/observer.png)
+
+- **Publisher**: It creates events that are interesting to the other objects,
+  this happens when an event happens or when the object performs some behavior.
+  They contain a subscription infrastructure that let new subscribers join and
+  current subscribers leave the list
+- **Subscriber**: Interface that declares the notification interface. Usually
+  consists of a method that has several parameters that let the publisher pass
+  some events along with the update.
+
+> When a new event happens the `Publisher` goes through the list of
+> `Subscribers` and calls the notification method in the subscriber interface
+> to let them know that a change happened
+
+**Code**
+
+```java
+class Client {
+	public static void main(String[] args) {
+		Publisher publisher = new Publisher();
+		EventSubscriber subscriber = new EventSubscriber();
+		publisher.subscribe(subscriber);
+	}
+}
+
+class Publisher {
+	private Collection<Subscriber> subscribers;
+	State state;
+
+	Publisher() {
+		this.subscribers = new HashSet<>();
+	}
+
+	void subscribe(Subscriber subscriber) {
+		this.subscribers.add(subscriber)
+	}
+
+	void unsubscribe(Subscriber subscriber) {
+		this.subscribers.remove(subscriber);
+	}
+
+	void notifySubscribers() {
+		while (subscribers.hasNext()) {
+			Subscriber subscriber = subscribers.next();
+			subscriber.update(this)
+		}
+	}
+
+	mainBusinessLogic() {
+		// Something happens that changes the state
+	}
+}
+
+class EventSubscriber implements Subscriber {
+	update(Publisher publisher) {
+		// I react to the state
+		State state = publisher.state;
+	}
+}
+
+interface Subscriber {
+	update(Publisher publisher)
+}
+
+class State {}
+```
+
+**When to use**
+
+- When you need an object to change when the state of another object changes
+- When you need to observe some objects for a limited time or specific cases
