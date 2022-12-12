@@ -1,88 +1,16 @@
 ---
+title: Principles
 sidebar_position: 2
 ---
 
-# Translate your site
+# SOLID Principles
 
-Let's translate `docs/intro.md` to French.
+SOLID is a set of principles that were design by Robert Martin in the
+essay [Design Principles and Design Patterns](https://web.archive.org/web/20150906155800/http:/www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf). In this essay he describes that a successful software is going to require
+change and is going to have a need to be develop further, without any sort of guidelines or principles the software is going to become rigid, fragile, time-consuming and unable to change.[^1]
 
-## Configure i18n
+So SOLID provide a set of mental guidelines that help developers on how they should **think** about their code while they are developing software thinking in the long-term gains rather than the short term benefits of _hacky_ code.
 
-Modify `docusaurus.config.js` to add support for the `fr` locale:
+This principles focus on reducing the dependencies of the developer on tool and frameworks making it easier to collaborate without impacting other developers, it also increases reliability in the software since this principles promotes code that is easily testable while still making it much more easier to maintain and extend
 
-```js title="docusaurus.config.js"
-module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-  },
-};
-```
-
-## Translate a doc
-
-Copy the `docs/intro.md` file to the `i18n/fr` folder:
-
-```bash
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current/
-
-cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
-```
-
-Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
-
-## Start your localized site
-
-Start your site on the French locale:
-
-```bash
-npm run start -- --locale fr
-```
-
-Your localized site is accessible at [http://localhost:3000/fr/](http://localhost:3000/fr/) and the `Getting Started` page is translated.
-
-:::caution
-
-In development, you can only use one locale at a same time.
-
-:::
-
-## Add a Locale Dropdown
-
-To navigate seamlessly across languages, add a locale dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'localeDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-The locale dropdown now appears in your navbar:
-
-![Locale Dropdown](./img/localeDropdown.png)
-
-## Build your localized site
-
-Build your site for a specific locale:
-
-```bash
-npm run build -- --locale fr
-```
-
-Or build your site to include all the locales at once:
-
-```bash
-npm run build
-```
+[^1]: Stephen Watts. 'The Importance of SOLID Design Principles', _BMC_, June 15, 2020, https://www.bmc.com/blogs/solid-design-principles/.
