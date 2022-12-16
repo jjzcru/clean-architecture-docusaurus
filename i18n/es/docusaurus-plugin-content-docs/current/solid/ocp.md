@@ -5,6 +5,8 @@ description: Un artefacto de software debe estar abierto para extensión pero ce
 
 # Open-closed Principle
 
+_Principio abierto-cerrado_
+
 > Un artefacto de software debe estar abierto para extensión pero cerrado
 > para modificación.[^1]
 >
