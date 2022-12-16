@@ -1,25 +1,25 @@
 ---
 sidebar_position: 1
-description: Object-oriented design concepts.
+description: Conceptos de diseño orientado a objetos.
 ---
 
-# Overview
+# General
 
-SOLID is a set of principles that were design by Robert Martin in the
-essay [Design Principles and Design Patterns](https://web.archive.org/web/20150906155800/http:/www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf). In this essay he describes that a successful software is going to require
-change and is going to have a need to be develop further, without any sort of
-guidelines or principles the software is going to become rigid, fragile,
-time-consuming and unable to change.[^1]
+SOLID es un conjunto de principios que fueron diseñados por Robert Martin en el
+ensayo [Principios de diseño y patrones de diseño](https://web.archive.org/web/20150906155800/http:/www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf). 
+En este ensayo describe que un software exitoso va a requerir
+cambiará y tendrá la necesidad de desarrollarse más, sin ningún tipo de
+directrices o principios el software se va a volver rígido, frágil,
+requiere mucho tiempo y no se puede cambiar.[^1]
 
-So SOLID provide a set of mental guidelines that help developers on how they
-should **think** about their code while they are developing software thinking
-in the long-term gains rather than the short term benefits of _hacky_ code.
+Entonces, SOLID proporciona un conjunto de pautas mentales que ayudan a los desarrolladores sobre cómo
+deberían **pensar** en su código mientras desarrollan software pensando
+en las ganancias a largo plazo en lugar de los beneficios a corto plazo del código _hacky_.
 
-This principles focus on reducing the dependencies of the developer on tool
-and frameworks making it easier to collaborate without impacting other
-developers, it also increases reliability in the software since this principles
-promotes code that is easily testable while still making it much more easier
-to maintain and extend.
+Estos principios se enfocan en reducir las dependencias del desarrollador en las herramientas
+y _frameworks_ que facilitan la colaboración sin afectar a otros desarrolladores, también aumenta 
+la confiabilidad en el software ya que este principio promueve un código que se puede probar fácilmente 
+y al mismo tiempo lo hace mucho más fácil para mantener y ampliar.
 
 [^1]:
     Stephen Watts. 'The Importance of SOLID Design Principles', _BMC_,
