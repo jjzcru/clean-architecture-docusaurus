@@ -1,8 +1,8 @@
 {
-  "label": "Design Patterns",
+  "label": "Patrones de diseño",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Design Patterns are typical solutions to common problems in software design. Each pattern is like a blueprint that you can customize to solve a particular design problem in your code."
+    "description": "Los patrones de diseño son soluciones típicas a problemas comunes en el diseño de software. Cada patrón es como un modelo que puede personalizar para resolver un problema de diseño particular en su código."
   }
 }

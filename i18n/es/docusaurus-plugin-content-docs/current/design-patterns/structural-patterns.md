@@ -1,47 +1,47 @@
 ---
 sidebar_position: 3
-description: Assemble objects and classes into larger structures, while still keeping these structures flexible and efficient
+description: Reúna objetos y clases en estructuras más grandes, manteniendo estas estructuras flexibles y eficientes.
 ---
 
-# Structural Design Patterns
+# Patrones de Diseño Estructural
 
-These kinds of patterns explain how we can assemble objects and classes into
-larger structures, while still keeping these structures flexible and efficient.
+Este tipo de patrones explica cómo podemos ensamblar objetos y clases en
+estructuras más grandes, manteniendo estas estructuras flexibles y eficientes.
 
 ## Adapter
 
-> It's a structural design pattern that allows objects with incompatible
-> interfaces to collaborate.
+> Es un patrón de diseño estructural que permite objetos con incompatible
+> interfaces para colaborar.
 
-**Explanation**
+**Explicación**
 
-Sometimes we have data types that are incompatible with one another, for
-example, we could have users purchase activity as `XML` files, we found a
-third-party service that is able to give us a recommendation model for the
-users but this service uses `JSON` format as the input data.
+A veces tenemos tipos de datos que son incompatibles entre sí, por
+ejemplo, podríamos hacer que los usuarios compraran la actividad como archivos `XML`, encontramos un
+servicio de terceros que es capaz de darnos un modelo de recomendación para el
+usuarios, pero este servicio utiliza el formato `JSON` como datos de entrada.
 
-We use the adapter pattern to create an interface that translates the content
-from `XML` to `JSON` objects that can then be used by the
-recommendation engine.
+Usamos el patrón de adaptador para crear una interfaz que traduce el contenido
+desde objetos `XML` a `JSON` que luego pueden ser utilizados por el
+motor de recomendación.
 
-Besides transforming from different data formats we can also use it to create
-objects with different interfaces to collaborate.
+Además de transformar desde diferentes formatos de datos, también podemos usarlo para crear
+objetos con diferentes interfaces para colaborar.
 
-**Structure**
+**Estructura**
 
 ![Adapter UML Diagram](./images/adapter.png)
 
-- **Client**: This is a class that contains the business logic of the program.
-- **Client Interface**: Describes the protocol that the other classes need to
-  follow to interact with the client code.
-- **Service**: This is the class that requires the data to be transformed,
-  the `Client` can use the service directly because of the compatibility.
-- **Adapter**: Is the class that can work with both the client and the service,
-  and implements the `Client Interface` while wrapping the service object. The
-  adapter receives calls from the client via the adapter interface and translates
-  those requests to the service in a format that it can understand.
+- **Client**: Esta es una clase que contiene la lógica de negocios del programa.
+- **Client Interface**: Describe el protocolo que las otras clases necesitan para
+   siga para interactuar con el código del cliente.
+- **Service**: Esta es la clase que requiere que los datos sean transformados,
+   el `Client` puede usar el servicio directamente debido a la compatibilidad.
+- **Adapter**: Es la clase que puede trabajar tanto con el cliente como con el servicio,
+   e implementa la `Client Interface` mientras envuelve el objeto de servicio. los
+   adaptador recibe llamadas del cliente a través de la interfaz del adaptador y traduce
+   esas solicitudes al servicio en un formato que pueda entender.
 
-**Code**
+**Código**
 
 ```java
 class Client {
@@ -78,51 +78,50 @@ class JsonService {
 class JSON {}
 ```
 
-**When to use**
+**Cuándo usar**
 
-- When you have an existing class but this class isn't compatible with the
-  rest of the codebase.
-- When you want to reuse existing subclasses that lack common functionality
-  that can be abstracted into a superclass.
+- Cuando tienes una clase existente pero esta clase no es compatible con el
+   resto del código base.
+- Cuando desee reutilizar subclases existentes que carecen de funcionalidad común
+   que se puede abstraer en una superclase.
 
 ## Façade
 
-> Is a structural design pattern that simplifies the interface to a library,
-> a framework, or any complex set of classes.
+> Es un patrón de diseño estructural que simplifica la interfaz a una biblioteca,
+> un marco, o cualquier conjunto complejo de clases.
 
-**Explanation**
+**Explicación**
 
-When we need to rely on frameworks or specific libraries, we need to
-initialize, configure and keep track of dependencies and execute the method
-in the correct order.
+Cuando necesitamos confiar en marcos o bibliotecas específicas, debemos
+inicializar, configurar y realizar un seguimiento de las dependencias y ejecutar el método
+en el orden correcto.
 
-In the end, the logic of the application gets tightly coupled with the
-implementation of this third-party library, which makes it hard to maintain
-and comprehend, to avoid this we create a simple interface that provides the
-functionality that we really cared about instead of worrying about the
-underlying implementation.
+Al final, la lógica de la aplicación se acopla estrechamente con la
+implementación de esta biblioteca de terceros, lo que dificulta el mantenimiento
+y comprender, para evitar esto creamos una interfaz simple que proporciona la
+funcionalidad que realmente nos importaba en lugar de preocuparnos por la
+implementación subyacente.
 
-This limits the functionalities provided by the library but enhances the
-functionality that our business really required and also decouples the
-program from that library.
+Esto limita las funcionalidades proporcionadas por la biblioteca, pero mejora la
+funcionalidad que nuestro negocio realmente requería y también desacopla la
+programa de esa biblioteca.
 
-**Structure**
+**Estructura**
 
-![Façade UML Diagram](./images/facade.png)
+![Diagrama UML Façade](./images/facade.png)
+- **Client**: Utiliza `Façades` en lugar de llamar a los objetos de los subsistemas
+   directamente.
+- **Façade**: Proporciona un acceso conveniente a una parte particular del
+   funcionalidad del subsistema.
+- **Additional Façade**: Estas fachadas también se pueden crear para evitar
+   contaminar una sola fachada con una característica no relacionada que la haría
+   otra estructura compleja, esta fachada puede ser utilizada por el cliente o
+   otra fachada.
+- **Complex Subsystem**: Podrían ser varios objetos que interactúan en
+   formas complejas, bibliotecas de terceros, marcos, ORM. Estos subsistemas son
+   desconocía la existencia de las 'Fachadas'.
 
-- **Client**: Uses the `Façades` instead of calling the subsystems objects
-  directly.
-- **Façade**: It provides convenient access to a particular part of the
-  subsystem functionality.
-- **Additional Façade**: These façades can also be created to prevent
-  polluting a single façade with an unrelated feature that would make it
-  another complex structure, this façade can be used by the client or
-  another façade.
-- **Complex Subsystem**: It could be various objects that interact in
-  complex ways, third-party libraries, frameworks, ORM. These subsystems are
-  unaware of the existence of the `Façades`.
-
-**Code**
+**Código**
 
 ```java
 class Client {
@@ -179,8 +178,8 @@ class Direction {}
 class Event {}
 ```
 
-**When to use**
+**Cuándo usar**
 
-- When you need a simple interface to interact with a complex subsystem.
-- When you want to structure the subsystem into layers.
-- When you want to decouple a library or framework from the business logic.
+- Cuando necesita una interfaz simple para interactuar con un subsistema complejo.
+- Cuando se quiere estructurar el subsistema en capas.
+- Cuando desee desacoplar una biblioteca o un marco de la lógica empresarial.
