@@ -56,3 +56,6 @@ When you have a group a commits in your local repository and would like to _publ
 _Since the remote repository can be access by other people, how do I get the changes that were perform by other people on my team?_
 
 When you need to synchronised the remote repository to your local repository you perform a `git pull` to get those changes and add them to your git history.
+
+[^1]: 'Version Control Systems', _Geeks For Geeks_, June 29, 2022, https://www.geeksforgeeks.org/version-control-systems/
+[^2]: 'Git commit', _Bitbucket_, 2022, https://www.atlassian.com/git/tutorials/saving-changes/git-commit
