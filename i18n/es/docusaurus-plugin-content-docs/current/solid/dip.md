@@ -1,35 +1,37 @@
 ---
 sidebar_position: 6
-description: The most flexible systems are those in which source code dependencies refer only to abstractions, not to concretions.
+description: Los sistemas más flexibles son aquellos en los que las dependencias del código fuente se refieren únicamente a abstracciones, no a concreciones.
 ---
 
 # Dependency Inversion Principle
 
-> The most flexible systems are those in which source code dependencies refer
-> only to abstractions, not to concretions
+_Principio de inversión de dependencia_
+
+> Los sistemas más flexibles son aquellos en los que las dependencias del código fuente se refieren
+> solo a abstracciones, no a concreciones
 >
 > > Robert C. Martin
 
-This principle states that our code should rely on the behavior of our code
-instead of the implementation details.
+Este principio establece que nuestro código debe basarse en el comportamiento de nuestro código
+en lugar de los detalles de implementación.
 
-An example of this is fetching data from a database, as a developer, as a
-customer or as a user we really don't care "where" I'm getting the information,
-the **behaviour** is "As a user I want to see a list of all my orders", the
-application could store them in a single `.json` file, in a Document Database
-like [MongoDB](https://www.mongodb.com/) or in a SQL database like
-[SQLite](https://www.sqlite.org) or [PostgreSQL](https://www.postgresql.org/).
+Un ejemplo de esto es obtener datos de una base de datos, como desarrollador, como
+cliente o como usuario realmente no nos importa "dónde" obtengo la información,
+el **comportamiento** es "Como usuario quiero ver una lista de todos mis pedidos", el
+la aplicación podría almacenarlos en un solo archivo `.json`, en una base de datos de documentos
+como [MongoDB](https://www.mongodb.com/) o en una base de datos SQL como
+[SQLite](https://www.sqlite.org) o [PostgreSQL](https://www.postgresql.org/).
 
-All this stores mechanism are implementation details and our code should not
-rely on them, it should rely on the abstraction that "I need to get the orders".
+Todos estos mecanismos de almacenamiento son detalles de implementación y nuestro código no debería
+confiar en ellos, debería basarse en la abstracción de que "Necesito recibir los pedidos".
 
-Now totally depending on abstract components is impossible since we have
-primitives data types like `string`, `int` or `float`, but the difference is
-that this components are **stable**, they do not change, so we can rely on
-**stable** components like primitives, interfaces, abstract classes
-and [DTO](https://www.okta.com/identity-101/dto/).
+Ahora, depender totalmente de componentes abstractos es imposible ya que tenemos
+tipos de datos primitivos como `string`, `int` o `float`, pero la diferencia es
+que estos componentes son **estables**, no cambian, por lo que podemos confiar en
+Componentes **estables** como primitivos, interfaces, clases abstractas
+y [DTO](https://www.okta.com/identity-101/dto/).
 
-_How can we use things like databases if those are volatile components?_
+_¿Cómo podemos usar cosas como bases de datos si esos son componentes volátiles?_
 
-You create abstractions that describe the behavior and make your program
-rely on those behavior, this abstraction could be [Factories](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm), [Repositories](https://deviq.com/design-patterns/repository-pattern) or [Façades](https://www.geeksforgeeks.org/facade-design-pattern-introduction/).
+Creas abstracciones que describen el comportamiento y hacen que tu programa
+confiar en ese comportamiento, esta abstracción podría ser [Fábricas] (https://www.tutorialspoint.com/design_pattern/factory_pattern.htm), [Repositorios] (https://deviq.com/design-patterns/repository-pattern) o [Fachadas](https://www.geeksforgeeks.org/facade-design-pattern-introduction/).
