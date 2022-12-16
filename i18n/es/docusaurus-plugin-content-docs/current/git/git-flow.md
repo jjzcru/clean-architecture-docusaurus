@@ -5,66 +5,66 @@ description: A branching model to achieve flow
 
 # Gitflow
 
-![Git Workflow](./images/gitflow-workflow.png)
+![Flujo de trabajo de Gitflow](./images/gitflow-workflow.png)
 
-Gitflow is a git branching model that involves using a set of features, helper and multiple primary branches to develop software. It was introduced by [Vincent Driessen at Nvie](http://nvie.com/posts/a-successful-git-branching-model/).
+Gitflow es un modelo de bifurcación de git que implica el uso de un conjunto de funciones, auxiliares y múltiples ramas primarias para desarrollar software. Fue presentado por [Vincent Driessen en Nvie] (http://nvie.com/posts/a-successful-git-branching-model/).
 
-The main concept is that you have two main long lived branches called `develop` and `main` that are parallel to each other and used other helper branches like `feature`, `hotfix` and `release` branches to merge changes from one to the other.
+El concepto principal es que tiene dos ramas principales de larga duración llamadas `develop` y `main` que son paralelas entre sí y usan otras ramas auxiliares como `feature`, `hotfix` y `release` para fusionar cambios de uno a el otro.
 
-This parallel branches coincide with their respective development environments.
+Estas ramas paralelas coinciden con sus respectivos entornos de desarrollo.
 
-Gitflow has an [extension](https://github.com/nvie/gitflow) that introduces commands to make it easier to maintain a gitflow workflow.
+Gitflow tiene una [extensión](https://github.com/nvie/gitflow) que introduce comandos para facilitar el mantenimiento de un flujo de trabajo de gitflow.
 
 ## Main
 
-![Main Branch](./images/main-develop-branch.png)
+![Sucursal principal](./images/main-develop-branch.png)
 
-Is a long lived branch that stores the official release history of the repository, this branch is used in the production environment and is the most stable of the branches.
+Es una rama de larga duración que almacena el historial oficial de versiones del repositorio, esta rama se utiliza en el entorno de producción y es la más estable de las ramas.
 
-It's convenient to tag all the commits that belongs to the `main` branch with a version number
+Es conveniente etiquetar todos los commits que pertenecen a la rama `main` con un número de versión
 
-> Never commit directly to the `main` branch
+> Nunca te comprometas directamente con la rama `main`
 
 ## Develop
 
-This branch is were all the development work is performed, is the [WIP](https://www.investopedia.com/terms/w/workinprogress.asp) for the project, it servers as the integration branch for the features.
+Esta rama es donde se realiza todo el trabajo de desarrollo, es el [WIP](https://www.investopedia.com/terms/w/workinprogress.asp) para el proyecto, sirve como rama de integración para las funciones.
 
-This branch has all the history of the project which differentiates from the `main` branch that only contains the releases.
+Esta rama tiene toda la historia del proyecto que se diferencia de la rama "principal" que solo contiene los lanzamientos.
 
 ## Feature branches
 
-![Feature Branch](./images/feature-branch.png)
+![Feature branches](./images/feature-branch.png)
 
-When you are developing, each new feature should reside in its own branch, which you can publish to a remote repository for collaboration.
+Cuando esté desarrollando, cada característica nueva debe residir en su propia rama, que puede publicar en un repositorio remoto para la colaboración.
 
-This branch does not branch off from `main`, but instead, it branches off from `develop` as their parent branch and once the feature is completed it gets merged back into develop.
+Esta rama no se ramifica desde "principal", sino que se ramifica desde "desarrollar" como su rama principal y, una vez que se completa la función, se vuelve a fusionar con desarrollar.
 
-> Feature branches **NEVER** interact with `main`
+> Las ramas de función **NUNCA** interactúan con `principal`
 
 ## Release branches
 
-![Release Branch](./images/release-branch.png)
+![Release branches](./images/release-branch.png)
 
-Once that `develop` reach a stage that has enough feature that justifies a release, or the release date reaches, you need to merge these changes to `main`.
+Una vez que 'desarrollar' alcanza una etapa que tiene suficientes funciones que justifican un lanzamiento, o llega la fecha de lanzamiento, debe fusionar estos cambios en 'principal'.
 
-To do this you need to create a branch to start the release cycle, this is `Release branches`, at this point in time no new features are going to be introduced, you focus mostly on bug fixes, documentation, or any other task that are related to the release.
+Para hacer esto, debe crear una rama para iniciar el ciclo de lanzamiento, esto es "Ramas de lanzamiento", en este momento no se introducirán nuevas funciones, se enfoca principalmente en la corrección de errores, documentación o cualquier otra tarea que están relacionados con el lanzamiento.
 
-> These branches could be attached to a staging environment for further manual testing or QA
+> Estas sucursales podrían adjuntarse a un entorno de prueba para realizar más pruebas manuales o control de calidad
 
-Once the release branch is ready to ship it gets merged to `main` and tagged with a version number. It also needs to be merged back to `develop` because some progress could be made since the release was initiated.
+Una vez que la rama de lanzamiento está lista para enviarse, se fusiona con `main` y se etiqueta con un número de versión. También debe volver a fusionarse con "desarrollar" porque se podrían lograr algunos avances desde que se inició el lanzamiento.
 
-Working in this way provides flexibility for the team because the rest of the team could start working on the feature for the next release while the current release is being worked on.
+Trabajar de esta manera brinda flexibilidad al equipo porque el resto del equipo podría comenzar a trabajar en la función para la próxima versión mientras se trabaja en la versión actual.
 
 ## Hotfix branches
 
-![Hotfix Branch](./images/hotfix-branch.png)
+![Hotfix branches](./images/hotfix-branch.png)
 
-When you have a bug or issue in the production system and you need to be able to patch you, you create branches to fix these issues, these branches are `Hotfix branches.
+Cuando tiene un error o problema en el sistema de producción y necesita poder parchearlo, crea ramas para solucionar estos problemas, estas ramas son "ramas de revisión".
 
-They are a lot like [Release Branches](#release-branches) but instead of branching off from `develop` this one branch off from `main`.
+Son muy parecidos a [Release Branches](#release-branches) pero en lugar de bifurcarse desde `develop`, este se bifurca desde `main`.
 
-> This is the only kind of branch that should branch off directly from `main`
+> Este es el único tipo de rama que debe bifurcarse directamente desde `principal`
 
-As soon as the bug or issue is fixed it should be merged back to `main` and `develop` and `main` should also be tagged to update the version number.
+Tan pronto como se solucione el error o el problema, debe volver a fusionarse con `main` y `develop` y `main` también deben etiquetarse para actualizar el número de versión.
 
-You can think of this branch as `ad hoc` release that works directly on `main`
+Puede pensar en esta rama como una versión 'ad hoc' que funciona directamente en `main`

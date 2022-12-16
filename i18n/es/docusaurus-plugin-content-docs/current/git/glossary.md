@@ -1,70 +1,70 @@
 ---
 sidebar_position: 4
-description: Glossary of terms
+description: Glosario de términos
 ---
 
-# Glossary
+# Glosario
 
 ## Branch
 
-When you are working on a git project your changes live inside a _timeline_ which is composed of a group of commits, this timeline is called a `branch`.
+Cuando está trabajando en un proyecto de git, sus cambios viven dentro de una _línea de tiempo_ que se compone de un grupo de confirmaciones, esta línea de tiempo se llama `branch`.
 
-The same way when you have series that develops along multiple characters and each character has their own story line, think of [Money Heist](https://en.wikipedia.org/wiki/Money_Heist) or [The Playlist](<https://en.wikipedia.org/wiki/The_Playlist_(TV_series)>), the same thing happens while developing software, you create different timelines for different sections of the code, this could be arbitrary like creating different branches for different feature or different branches for each developer.
+De la misma manera, cuando tienes una serie que se desarrolla a lo largo de varios personajes y cada personaje tiene su propia historia, piensa en [La casa de papel](https://en.wikipedia.org/wiki/Money_Heist) o [The Playlist](https://www.imdb.com/title/tt11564258/), sucede lo mismo al desarrollar software, crea diferentes líneas de tiempo para diferentes secciones del código, esto podría ser arbitrario, como crear diferentes ramas para diferentes funciones o diferentes sucursales para cada desarrollador.
 
-The same way that happens with the tv series, even tough the different branches are created from a particular point in time and keep going on their own, those timelines eventually converge into the main story line, and the same happens with the software where eventually they converged into a branch and bring with them all the changes that happens to them while their were independent which is called a [Merge branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+De la misma manera que sucede con la serie de televisión, aunque las diferentes ramas se crean a partir de un punto particular en el tiempo y continúan por su cuenta, esas líneas de tiempo eventualmente convergen en la línea principal de la historia, y lo mismo sucede con el software donde eventualmente convergieron en una rama y traen consigo todos los cambios que les suceden mientras eran independientes, lo que se denomina [Merge branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
 
 ## Forking
 
-This is not a command in git, but more like a concept, if we think of branches like independent stories that eventually converge into the main story line, a fork is a like that story line didn't converge and went rogue to create it's own spin-off. Like [Pearson](https://www.imdb.com/title/tt8115460/) with [Suits](https://www.imdb.com/title/tt1632701/)
+Este no es un comando en git, sino más bien un concepto, si pensamos en las ramas como historias independientes que finalmente convergen en la línea de la historia principal, una bifurcación es como si la línea de la historia no convergiera y se volviera rebelde para crear su propio escindir. Me gusta [Pearson](https://www.imdb.com/title/tt8115460/) con [Suits](https://www.imdb.com/title/tt1632701/)
 
-In a fork you start a new project from a specific point in time from the codebase and then run it independently from that project, one example of this would be [MariaDB](https://mariadb.org) is a fork of [MySQL](https://mariadb.org).
+En una bifurcación, inicia un nuevo proyecto desde un punto específico en el tiempo desde el código base y luego lo ejecuta independientemente de ese proyecto, un ejemplo de esto sería [MariaDB](https://mariadb.org) es una bifurcación de [MySQL](https://www.mysql.com/).
 
 ## HEAD
 
-This refers to the latest commit in a particular branch, and when you add a new commit the different are performed against this commit, and once a commit is perform the latest commit will become the new `HEAD`.
+Esto se refiere a la última confirmación en una rama en particular, y cuando agrega una nueva confirmación, las diferentes se realizan contra esta confirmación, y una vez que se realiza una confirmación, la última confirmación se convertirá en el nuevo `HEAD`.
 
-Following the series analogy, the latest episode of a series would be the `HEAD` in a `branch`.
+Siguiendo la analogía de la serie, el último episodio de una serie sería la `HEAD` en una 'rama'.
 
 ## Hook
 
-This are scripts that run automatically every time a particular event occurs in a git repository.[^1]
+Estos son scripts que se ejecutan automáticamente cada vez que ocurre un evento en particular en un repositorio de Git.[^1]
 
-This allows you to customized git internal behavior and trigger customizable actions in different key points in the development lifecycle.
+Esto le permite personalizar el comportamiento interno de git y desencadenar acciones personalizables en diferentes puntos clave del ciclo de vida del desarrollo.
 
-Use case for git hooks could be preventing unwanted behavior or enforce quality control before committing, like [lint](https://en.wikipedia.org/wiki/Lint_%28software%29), testing or enforce code conventions.
+El caso de uso de los git hooks podría ser prevenir comportamientos no deseados o aplicar el control de calidad antes de comprometerse, como [lint](https://en.wikipedia.org/wiki/Lint_%28software%29), probar o aplicar convenciones de código.
 
 ## Main
 
-This refers to the default branch that is used to keep track of the software, you could think of it like the base story line in a series.
+Esto se refiere a la rama predeterminada que se utiliza para realizar un seguimiento del software, podría pensar en ella como la historia base de una serie.
 
-This branch doesn't have to be called `main`, it could use any name but is usually the convention to call the default branch either `main` or `master` (not used as frequently because [Cultural sensitivity](https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main)).
+Esta rama no tiene que llamarse `Mmain`, podría usar cualquier nombre, pero generalmente la convención es llamar a la rama predeterminada ya sea `main` o `master` (no se usa con tanta frecuencia debido a [sensibilidad cultural](https://www.theserverside.com/feature/Why-GitHub-renamed-its-master-branch-to-main)).
 
 ## Pull Request
 
-When you are working with a remote directory, you usually want to develop changes in your local repo and then push those changes to a remote branch.
+Cuando trabaja con un directorio remoto, generalmente desea desarrollar cambios en su repositorio local y luego enviar esos cambios a una rama remota.
 
-When you are working with a distributed system that uses a centralized point, and you would like to add those changes to this centralized point you make a `Pull Request`
+Cuando está trabajando con un sistema distribuido que usa un punto centralizado, y desea agregar esos cambios a este punto centralizado, realiza una "Solicitud de extracción".
 
-Which basically means that you ask the maintainer/s of the project to merge the changes that you have into the project branch.
+Lo que básicamente significa que le pides a los mantenedores del proyecto que fusionen los cambios que tienes en la rama del proyecto.
 
 ## Repository
 
-Collection of commits, branches and tags to identify commits.
+Colección de confirmaciones, ramas y etiquetas para identificar confirmaciones.
 
 ## Tag
 
-When you are working on a git project you have a series of commits, commits are a changes that were applied to files inside the source code.
+Cuando está trabajando en un proyecto de git, tiene una serie de confirmaciones, las confirmaciones son cambios que se aplicaron a los archivos dentro del código fuente.
 
-Tags are a way to choose a particular commit and mark a particular reference about them, for example you want to use to tag different release versions of the source code so it's easier to navigate in the future, instead of going throw all the commits and guess which one has the change that you are looking for.
+Las etiquetas son una forma de elegir un compromiso en particular y marcar una referencia particular sobre ellos, por ejemplo, desea usar para etiquetar diferentes versiones de lanzamiento del código fuente para que sea más fácil navegar en el futuro, en lugar de arrojar todos los compromisos y adivinar cual tiene el cambio que buscas.
 
 ## Version Control
 
-This is a system that records changes to a file or set of files over time, and can recall specific versions of that system later in time.
+Este es un sistema que registra cambios en un archivo o conjunto de archivos a lo largo del tiempo y puede recuperar versiones específicas de ese sistema más adelante.
 
 ## Working Tree
 
-This is the directory, and the files and directory inside, that are associated with a [Repository](#repository).
+Este es el directorio, y los archivos y el directorio dentro, que están asociados con un [Repositorio](#repository).
 
-This basically described all the files in the project that can be handled by git.
+Esto básicamente describe todos los archivos en el proyecto que puede manejar git.
 
 [^1]: 'Git Hooks', _Bitbucket_, 2022, https://www.atlassian.com/git/tutorials/git-hooks?section=conceptual-overview

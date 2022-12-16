@@ -1,22 +1,22 @@
 ---
 sidebar_position: 1
-description: What is git?
+description: ¿Qué es git?
 ---
 
-# Overview
+# General
 
-[git](https://git-scm.com) is a distributed version-control system that track changes in computer files and coordinate that work among multiple people.
+[git](https://git-scm.com) es un sistema de control de versiones distribuido que rastrea los cambios en los archivos de la computadora y coordina ese trabajo entre varias personas.
 
-You do not required to store all the files in a central store, you have clones of the copy of the repository and has the entire history of the project in those clones.
+No necesita almacenar todos los archivos en un almacén central, tiene clones de la copia del repositorio y tiene todo el historial del proyecto en esos clones.
 
-You can self-host a server to store the code and it's metadata like:
+Puede hospedar un servidor para almacenar el código y sus metadatos como:
 
-- [Gitlab CE](https://about.gitlab.com/install/?version=ce)
+- [CE de Gitlab](https://about.gitlab.com/install/?version=ce)
 - [Gitea](https://gitea.io/en-us/)
 - [GitBucket](https://gitbucket.github.io)
 - [Gogs](https://gogs.io)
 
-Or use third-party service like:
+O use un servicio de terceros como:
 
 - [GitHub](https://github.com)
 - [Bitbucket](https://bitbucket.org)

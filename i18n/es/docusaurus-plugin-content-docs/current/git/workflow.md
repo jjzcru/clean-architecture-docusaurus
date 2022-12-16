@@ -1,61 +1,61 @@
 ---
 sidebar_position: 2
-description: git has different stages that perform different activities
+description: git tiene diferentes etapas que realizan diferentes actividades
 ---
 
-# Git Workflow
+# Flujo de trabajo de Git
 
-![Git Workflow](./images/git_workflow_diagram.png)
+![Flujo de trabajo de Git](./images/git_workflow_diagram.png)
 
-When you are working with git you are working with four fundamental elements: Working Directory, Staging Area, Local Repository and Remote Repository.
+Cuando trabaja con git, trabaja con cuatro elementos fundamentales: directorio de trabajo, área de preparación, repositorio local y repositorio remoto.
 
-You can modify, alter or group changes and files with different command that are related to the different stages.
+Puede modificar, alterar o agrupar cambios y archivos con diferentes comandos que están relacionados con las diferentes etapas.
 
 ## Working Directory
 
-When you are working on a git project, in the root of the project you have a hidden directory called `.git` which stores the metadata of all the changes that were perform to that particular repository and also contains the data of the current state of the files.
+Cuando está trabajando en un proyecto git, en la raíz del proyecto tiene un directorio oculto llamado `.git` que almacena los metadatos de todos los cambios que se realizaron en ese repositorio en particular y también contiene los datos del estado actual de Los archivos.
 
-> Database of changes. It contains all the edits and historical versions (snapshots) of the project.[^1]
+> Base de datos de cambios. Contiene todas las ediciones y versiones históricas (instantáneas) del proyecto.[^1]
 
-When you have a file in your working directory if could have three possible states:
+Cuando tiene un archivo en su directorio de trabajo, podría tener tres estados posibles:
 
-- **Staged**: This means that the files with updated changes are marked to be committed to your local repository but are not yet committed.
-- **Modified**: This means that the files that have updated changes are not yet stored in the local repository.
-- **Committed**: This means that the changes that were made are store safely in the local repository.
+- **Staged**: Esto significa que los archivos con cambios actualizados están marcados para ser confirmados en su repositorio local pero aún no están confirmados.
+- **Modified**: Esto significa que los archivos que tienen cambios actualizados aún no están almacenados en el repositorio local.
+- **Commited**: Esto significa que los cambios realizados se almacenan de forma segura en el repositorio local.
 
-If you need to move a file to the `Staging Area` you need to perform a `git add` to the files that you which to add.
+Si necesita mover un archivo al 'Área de preparación', debe realizar un 'git add' a los archivos que desea agregar.
 
 ## Staging Area
 
-This is the middle ground between what you have done to your file, [Working Directory](#working-directory), and the last thing you have committed, [HEAD commit](https://initialcommit.com/blog/what-is-git-head).
+Este es el término medio entre lo que ha hecho con su archivo, [Directorio de trabajo](# Working Directory), y lo último que ha confirmado, [Commit HEAD](https://initialcommit.com/blog/what-is-git-head).
 
-This lets you prepare what would be the next [commit](https://www.atlassian.com/git/tutorials/saving-changes/git-commit) and also give you the tools to easily know what is going on.
+Esto le permite preparar lo que sería el próximo [commit](https://www.atlassian.com/git/tutorials/saving-changes/git-commit) y también le brinda las herramientas para saber fácilmente qué está pasando.
 
-> Commits can be thought of as snapshots or milestones along the timeline of a Git project.[^2]
+> Las confirmaciones se pueden considerar como instantáneas o hitos a lo largo de la línea de tiempo de un proyecto de Git.[^2]
 
-This tooling adds more complexity but it also adds flexibility to craft better commits, since you can modify and stage several times before you create a commit.
+Esta herramienta agrega más complejidad pero también agrega flexibilidad para crear mejores compromisos, ya que puede modificar y organizar varias veces antes de crear un compromiso.
 
 ## Local Repository
 
-Once you finish adding and modifying the files in the staging area you create a commit, which is like a save point in a video game.
+Una vez que termine de agregar y modificar los archivos en el área de preparación, crea una confirmación, que es como un punto de guardado en un videojuego.
 
-The local repository stores this changes in the `.git` directory, which stores all the checkpoints and commits.
+El repositorio local almacena estos cambios en el directorio `.git`, que almacena todos los puntos de control y confirmaciones.
 
-A commit simply implies that you want to take a checkpoint of all the changes that have occurred up to this point since the last commit (HEAD commit) as comparison, once you commit the staging area will be empty.
+Una confirmación simplemente implica que desea tomar un punto de control de todos los cambios que se han producido hasta este punto desde la última confirmación (confirmación HEAD) como comparación, una vez que confirme, el área de preparación estará vacía.
 
 ## Remote Repository
 
-All the previous stages are enough if you want to keep track of those changes only to you and your machine, but software is created in conjunction with other people and for that we need a place that everyone has access that would enable developers to collaborate, this is where a Remote Repository comes in.
+Todas las etapas anteriores son suficientes si desea realizar un seguimiento de esos cambios solo para usted y su máquina, pero el software se crea en conjunto con otras personas y para eso necesitamos un lugar al que todos tengan acceso que permita a los desarrolladores colaborar, este es donde entra en juego un Repositorio Remoto.
 
-Remember that git is a **distributed** version-control system, so you can have a git repository locally and you can synchronize it another git repository that is in a remote location, this particular location is called `origin`.
+Recuerde que git es un sistema de control de versiones **distribuido**, por lo que puede tener un repositorio git localmente y puede sincronizarlo con otro repositorio git que esté en una ubicación remota, esta ubicación en particular se llama `origen`.
 
-You could have a local repository that targets multiple origin, this is where the distributed nature of git comes into play.
+Podría tener un repositorio local que apunte a múltiples orígenes, aquí es donde entra en juego la naturaleza distribuida de git.
 
-When you have a group a commits in your local repository and would like to _publish_ those changes to a remote repository you perform a `git push`.
+Cuando tienes un grupo de confirmaciones en tu repositorio local y te gustaría _publicar_ esos cambios en un repositorio remoto, realizas un `git push`.
 
-_Since the remote repository can be access by other people, how do I get the changes that were perform by other people on my team?_
+_Dado que otras personas pueden acceder al repositorio remoto, ¿cómo obtengo los cambios realizados por otras personas de mi equipo?_
 
-When you need to synchronised the remote repository to your local repository you perform a `git pull` to get those changes and add them to your git history.
+Cuando necesite sincronizar el repositorio remoto con su repositorio local, realice un `git pull` para obtener esos cambios y agregarlos a su historial de git.
 
 [^1]: 'Version Control Systems', _Geeks For Geeks_, June 29, 2022, https://www.geeksforgeeks.org/version-control-systems/
 [^2]: 'Git commit', _Bitbucket_, 2022, https://www.atlassian.com/git/tutorials/saving-changes/git-commit
