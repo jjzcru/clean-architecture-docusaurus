@@ -1,25 +1,26 @@
 ---
 sidebar_position: 2
-description: A software module has one, and only one, reason to change.
+description: Un módulo de software tiene una, y sólo una, razón para cambiar.
 ---
 
 # Single Responsibility Principle
+_Principio de responsabilidad única_
 
-> A software module has one, and only one, reason to change.
+> Un módulo de software tiene una, y sólo una, razón para cambiar.
 >
 > > Robert C. Martin
 
-This principle states that a module, which could be a class, a function,
-a package or even a variable, has only one reason to change.[^1]
+Este principio establece que un módulo, que podría ser una clase, una función,
+un paquete o incluso una variable, solo tiene una razón para cambiar.[^1]
 
-When you are working in a class or a function you need to think about what is
-that function is trying to achieve, is a function is working on calculating
-the total amount of an order, it should not worry about opening or closing
-databases, or network requests, those should be handle by another "module".
+Cuando estás trabajando en una clase o una función, necesitas pensar en lo que es
+que la función está tratando de lograr, es una función que está trabajando para calcular
+el importe total de un pedido, no debe preocuparse por abrir o cerrar
+bases de datos, o solicitudes de red, deben ser manejadas por otro "módulo".
 
-SRP helps us to avoid _coupling_ meaning that a particular piece of code is
-bound to another piece, by working with SRP in mind it will create modules
-that are decoupled by design.
+SRP nos ayuda a evitar el _acoplamiento_, lo que significa que una determinada pieza de código es
+unido a otra pieza, al trabajar con SRP en mente, creará módulos
+que están desacoplados por diseño.
 
 [^1]:
     Robert C. Martin. _Clean Architecture_, First Edition, Prentice
