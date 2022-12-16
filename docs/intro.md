@@ -3,46 +3,32 @@ title: Introduction
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# From Dirty to Clean
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This is a introductory course that teaches developer how to build scalable application and also how they can collaborate with each other.
 
-## Getting Started
+The course is composed of 5 parts:
 
-Get started by **creating a new site**.
+## 1. [SOLID](/docs/category/solid)
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+In this chapter we are going to introduce guiding principles that work as a foundation on how to _think_ when we are solving problems, specially those related to OOP.
 
-### What you'll need
+This principles are applicable regardless of the programming language, project or company culture.
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## 2. [Design Patterns](/docs/category/design-patterns)
 
-## Generate a new site
+In this chapter we are going to learn about design patterns, different types, example of each type and when and how to use them.
 
-Generate a new Docusaurus site using the **classic template**.
+## 3. [The Twelve-Factor App](/docs/twelve-factor-app)
 
-The classic template will automatically be added to your project after you run the command:
+This is a methodology that provides a set of principles for building SaSS applications, which could be monolithic or micro-services. This principles makes software easy to build and customized on different environment without the need to refactor or change our code.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## 4. [Clean Architecture](/docs/category/clean-architecture)
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Using the concepts from previous chapters we are going to bring them all together and use them in an architecture that helps us build software by focusing on the use cases that the application need to perform instead of technological decisions (implementation details).
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Is a shift of mentality that focus on the _behavior_ of the program rather than the final implementation.
 
-## Start your site
+## 5. [Git](/docs/category/git)
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Since we build software collaboratively, in this chapter we are going to learn what git is and how to use it, and we are also going to learn a branching model for developing software.
