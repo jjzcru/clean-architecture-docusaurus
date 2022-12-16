@@ -1,32 +1,34 @@
 ---
 sidebar_position: 5
-description: No code should be forced to depend on methods it does not use.
+description: No se debe obligar a ningún código a depender de métodos que no utiliza.
 ---
 
 # Interface Segregation Principle
 
-> No code should be forced to depend on methods it does not use. [^1]
+_Principio de segregación de interfaz_
+
+> No se debe obligar a ningún código a depender de métodos que no utiliza. [^1]
 >
 > > Robert C. Martin
 
-This principle discusses that when you have an static language like Java or C#,
-each of the application that needs to implement an interface it needs to
-implement all the methods, even the ones that they don't use.
+Este principio explica que cuando tienes un lenguaje estático como Java o C#,
+cada una de las aplicaciones que necesita implementar una interfaz que necesita para
+implementar todos los métodos, incluso los que no utilizan.
 
-This principles proposes that instead of having a large interface that
-implements all the methods, it creates sub interfaces that each implement the
-methods that are required by the class.
+Este principio propone que en lugar de tener una gran interfaz que
+implementa todos los métodos, crea subinterfaces en las que cada una implementa el
+métodos requeridos por la clase.
 
-This is not a problem on dynamic languages like `python` or `ruby` because this
-checks happens at runtime instead of compile time.
+Esto no es un problema en lenguajes dinámicos como `python` o `ruby` porque esto
+las comprobaciones se realizan en tiempo de ejecución en lugar de en tiempo de compilación.
 
-> ISP is a language issue, rather than an architecture issue
+> ISP es un problema de idioma, más que un problema de arquitectura
 
-There is an exception, [Go](https://go.dev) is a compiled language that
-support this interface behavior like dynamic languages because `go` doesn't
-**implement** the interfaces but rather if uses [Duck
-Typing](https://devopedia.org/duck-typing) at compile time to check if the
-methods that are required are implement without the need to **import** them.
+Hay una excepción, [Go](https://go.dev) es un lenguaje compilado que
+admitir este comportamiento de interfaz como lenguajes dinámicos porque `go` no lo hace
+**implementar** las interfaces sino más bien si usa [Duck
+Typing](https://devopedia.org/duck-typing) en tiempo de compilación para verificar si el
+los métodos que se requieren se implementan sin necesidad de **importarlos**.
 
 [^1]:
     Robert C. Martin. _Agile Software Development: Principles, Patterns,
