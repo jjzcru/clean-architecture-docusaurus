@@ -1,40 +1,40 @@
 ---
 sidebar_position: 3
-description: How can we apply this architecture?
+description: ¿Cómo podemos aplicar esta arquitectura?
 ---
 
-# Implementation
+# Implementación
 
-![Clean Architecture Implementation](./images/clean-architecture-diagram.png)
+![Implementación de Clean Architecture](./images/clean-architecture-diagram.png)
 
-The clean architecture is just a way to think about our code in abstract way doing a separation of concerns with the business logic instead of prescribe solutions that a particular frameworks or tool dictates.
+La arquitectura limpia es solo una forma de pensar en nuestro código de manera abstracta haciendo una separación de preocupaciones con la lógica comercial en lugar de prescribir soluciones que dicta un marco o herramienta en particular.
 
-One way to implement Clean architecture would be is as a traditional horizontal layer architecture, where we separate our code base in what it does from a technical perspective.
+Una forma de implementar la arquitectura limpia sería como una arquitectura de capa horizontal tradicional, donde separamos nuestra base de código en lo que hace desde una perspectiva técnica.
 
 ## Presentation
 
-In this layer of the architecture we focus on the entry and output of the program, this is the layer that the user interacts.
+En esta capa de la arquitectura nos enfocamos en la entrada y salida del programa, esta es la capa en la que interactúa el usuario.
 
-- **REST API**: The code related to HTTP/s request and response, headers, input validation.
-- **CLI**: Code related to command interpretation, flags and values
-- **GUI**: input events, buttons, colors, layout.
+- **API REST**: el código relacionado con la solicitud y respuesta HTTP/s, encabezados, validación de entrada.
+- **CLI**: Código relacionado con la interpretación de comandos, banderas y valores
+- **GUI**: eventos de entrada, botones, colores, diseño.
 
-If the user interacts with it, belong to this layer regardless of the actual implementation, with this separation of concern is possible to provide all of this inputs in the same project without changing the rest of our code.
+Si el usuario interactúa con él, pertenece a esta capa independientemente de la implementación real, con esta separación de preocupaciones es posible proporcionar todas estas entradas en el mismo proyecto sin cambiar el resto de nuestro código.
 
-There is a clear boundary in the presentation layer, it only talks directly to the [Domain Layer](#domain) and never talks directly to the [Data Layer](#data).
+Hay un límite claro en la capa de presentación, solo habla directamente con la [Capa de dominio](#domain) y nunca habla directamente con la [Capa de datos] (#data).
 
 ## Domain
 
-In this layer lives the hearth and soul of our application, this is where the entities and the business logic of the program resides, this layer should be the most stable of the three layers.
+En esta capa vive el corazón y el alma de nuestra aplicación, aquí es donde residen las entidades y la lógica de negocios del programa, esta capa debería ser la más estable de las tres capas.
 
-In the domain layer the `Interactors` rely on abstractions of the [Data Layer](#data) instead of specific implementation, also the Domain layer is unaware of the existince of the [Presentation Layer](#presentation).
+En la capa de dominio, los 'Interactores' se basan en abstracciones de la [Capa de datos](#data) en lugar de una implementación específica, además, la capa de Dominio desconoce la existencia de la [Capa de presentación](#presentation).
 
-The domain layer is a dependency of the presentation layer, the reason for this is that the domain layer describes what the application should do, how this is achieve should not affect the program.
+La capa de dominio es una dependencia de la capa de presentación, la razón de esto es que la capa de dominio describe lo que debe hacer la aplicación, cómo se logra esto no debe afectar al programa.
 
-If we are building a banking application the logic is always the same regardless if this application is going to be a mobile application, an integration to an ATM or a developer tool wrapped in a CLI.
+Si estamos creando una aplicación bancaria, la lógica siempre es la misma, independientemente de si esta aplicación será una aplicación móvil, una integración a un cajero automático o una herramienta de desarrollo envuelta en una CLI.
 
 ## Data
 
-This layer handles everything that is related to persistence storage, external communication or any [Side Effect](<https://en.wikipedia.org/wiki/Side_effect_(computer_science)>).
+Esta capa maneja todo lo relacionado con el almacenamiento persistente, la comunicación externa o cualquier [Efecto secundario](https://en.wikipedia.org/wiki/Side_effect_(computer_science)).
 
-A good rule of thumb is that if you required anything that is outside of memory or that requires persistent storage it belongs to this layer, even the program file system, databases, [ORM](https://www.freecodecamp.org/news/what-is-an-orm-the-meaning-of-object-relational-mapping-database-tools/), [Message Queues](https://aws.amazon.com/message-queue/), [API](https://backendless.com/what-is-api-as-a-service/), other programs using [IPC Communication](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
+Una buena regla general es que si necesita algo que esté fuera de la memoria o que requiera almacenamiento persistente, pertenece a esta capa, incluso el sistema de archivos del programa, bases de datos, [ORM] (https://www.freecodecamp.org/news /qué-es-un-orm-el-significado-de-objeto-relacional-mapping-database-tools/), [Colas de mensajes](https://aws.amazon.com/message-queue/), [API](https://backendless.com/what-is-api-as-a-service/), otros programas que usan [Comunicación IPC](https://www.geeksforgeeks.org/inter-process-communication-ipc/ )

@@ -1,48 +1,48 @@
 ---
 sidebar_position: 2
-description: We need to change on how we look at dependencies with some rules.
+description: Necesitamos cambiar la forma en que vemos las dependencias con algunas reglas.
 ---
 
-# Dependency Rule
+# Regla de dependencia
 
-When you are developing a software using the clean architecture you have different levels of abstraction, using the diagram the further you go the higher the level of abstraction. And the inner circles are the policies for the program.
+Cuando está desarrollando un software utilizando la arquitectura limpia, tiene diferentes niveles de abstracción, utilizando el diagrama, cuanto más avance, mayor será el nivel de abstracción. Y los círculos internos son las políticas del programa.
 
-![Dependency Rule](./images/dependency-rule.png)
+![Regla de dependencia](./images/dependency-rule.png)
 
-> Source code dependencies must point only inwards, towards higher-level policies [^2]
+> Las dependencias del código fuente deben apuntar solo hacia adentro, hacia políticas de nivel superior [^1]
 
-This basically tell us that the outer circles are just implementation details of the program, the program itself should not rely on those circle but abstractions that represent those circles, the core of the program is in the inner circles which are the business logic.
+Básicamente, esto nos dice que los círculos externos son solo detalles de implementación del programa, el programa en sí no debe basarse en esos círculos sino en abstracciones que representan esos círculos, el núcleo del programa está en los círculos internos, que son la lógica comercial.
 
-Since this inner circle is the representation of the business rules, is less likely that this would required changes making them the most stable modules in the architecture.
+Dado que este círculo interno es la representación de las reglas comerciales, es menos probable que esto requiera cambios que los conviertan en los módulos más estables de la arquitectura.
 
 ## Entities
 
-Entities are objects in our program that embodies a small set of critical rules for operating critical business data or has an easy way to access that data.
+Las entidades son objetos en nuestro programa que incorporan un pequeño conjunto de reglas críticas para operar datos comerciales críticos o tienen una manera fácil de acceder a esos datos.
 
-For example, in a banking application an entity could be a `Transaction`, an `Account`, a `Loan`, in social network application could be a `Post`, an `Article`, a `Story`.
+Por ejemplo, en una aplicación bancaria, una entidad podría ser una 'Transacción', una 'Cuenta', un 'Préstamo', en una aplicación de red social podría ser una 'Publicación', un 'Artículo', una 'Historia'.
 
-This objects are concept that are use daily for the users of the program, it forces developer to focus more on the domain on which this program is going to run instead of a general ad-hoc implementation of a computational problem.
+Estos objetos son conceptos que se usan a diario para los usuarios del programa, lo que obliga al desarrollador a centrarse más en el dominio en el que se ejecutará este programa en lugar de una implementación ad-hoc general de un problema computacional.
 
 ## Interactors
 
-Interactors are another way to call _Use Cases_, and use cases contain the rules that specify how and when some critical business rules are applied when the entities are invoked. _Use Cases_ control the interaction between entities.
+Los interactuadores son otra forma de llamar a los _casos de uso_, y los casos de uso contienen las reglas que especifican cómo y cuándo se aplican algunas reglas comerciales críticas cuando se invocan las entidades. _Casos de uso_ controlan la interacción entre entidades.
 
-For example if are building an ATM software we have the use case `Withdraw Money` and for this operation we required different [Entities](#entities) like `Account`, `Transactions`, `User`.
+Por ejemplo, si estamos creando un software de cajero automático, tenemos el caso de uso `Retirar dinero` y para esta operación requerimos diferentes [Entidades](#entities) como `Cuenta`, `Transacciones`, `Usuario`.
 
-The object `Account` have property like `balance` and with this information the _Use Case_ is able to decide if that particular `User` is able to `Withdraw Money` from that account and if it's possible then it would reduced that amount from the `Account`.
+El objeto 'Cuenta' tiene una propiedad como 'saldo' y con esta información el _Caso de uso_ puede decidir si ese 'Usuario' en particular puede 'Retirar dinero' de esa cuenta y, si es posible, reduciría esa cantidad del `Cuenta`.
 
 ## Interface Adapters
 
-The code that lives in the interface adapter layer is a set of adapters that convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agent like a database or the web.
+El código que vive en la capa del adaptador de interfaz es un conjunto de adaptadores que convierten datos del formato más conveniente para los casos de uso y las entidades, al formato más conveniente para algún agente externo como una base de datos o la web.
 
-Example if we are working on a GUI for an android application the `MVC` model, the `Presenter`, `View` and `Controllers` all belong in this layer.
+Por ejemplo, si estamos trabajando en una GUI para una aplicación de Android, el modelo `MVC`, `Presenter`, `View` y `Controllers` pertenecen a esta capa.
 
-The same way for the database we transform the entities into a more convenient way to be stores in the persistent data layer, this means that if we are using SQL, [MongoDB](https://www.mongodb.com), [Redis](https://redis.io), [RethinkDB](https://rethinkdb.com) or plain files, those should be restricted to this layer and should not exist in neither the [Entities](#entities) or [Use Cases](#interactors) layer.
+De la misma forma que para la base de datos transformamos las entidades en una forma más conveniente de ser almacenadas en la capa de datos persistentes, esto significa que si estamos usando SQL, [MongoDB](https://www.mongodb.com), [Redis ](https://redis.io), [RethinkDB](https://rethinkdb.com) o archivos sin formato, estos deben estar restringidos a esta capa y no deben existir ni en las [Entidades](#entities) o [Casos de uso](#interactors).
 
 ## Frameworks and Drivers
 
-This is the outermost layer in the diagram and is composed of frameworks and tools, like databases or web frameworks. Usually you write glue code to interact with those services.
+Esta es la capa más externa del diagrama y está compuesta por marcos y herramientas, como bases de datos o marcos web. Por lo general, escribe un código de pegamento para interactuar con esos servicios.
 
-Every technology that is used beside the program itself is considered a detail.
+Cada tecnología que se utiliza además del programa en sí se considera un detalle.
 
-[^2]: Robert C. Martin, 'The Clean Architecture Dependency Rule', _InformIT_, https://www.informit.com/articles/article.aspx?p=2832399
+[^1]: Robert C. Martin, 'The Clean Architecture Dependency Rule', _InformIT_, https://www.informit.com/articles/article.aspx?p=2832399

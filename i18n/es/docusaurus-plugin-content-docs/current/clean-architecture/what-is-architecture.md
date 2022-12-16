@@ -1,20 +1,20 @@
 ---
 sidebar_position: 1
-description: How do we know if an architecture is good or bad?
+description: ¿Cómo sabemos si una arquitectura es buena o mala?
 ---
 
-# What is architecture?
+# ¿Qué es Arquitectura?
 
-When we talk about software architecture we can think in the same way as we build a house. We have multiple pieces that compose a house and we have blueprints on how to build it, the same concept applies to software.
+Cuando hablamos de arquitectura de software podemos pensar de la misma manera que construimos una casa. Tenemos múltiples piezas que componen una casa y tenemos planos de cómo construirla, el mismo concepto se aplica al software.
 
-> Architecture represents the significant decisions that shape a system, where significant is measure by cost of change [^1]
+> La arquitectura representa las decisiones significativas que dan forma a un sistema, donde lo significativo se mide por el costo del cambio [^1]
 >
-> > Grady Booth
+> > Puesto Grady
 
-Architecture is all the little details that support all the high-level decisions.
+La arquitectura son todos los pequeños detalles que soportan todas las decisiones de alto nivel.
 
-We build all those little decisions using different [Design Patterns](docs/category/design-patterns) while also following design principles like [S.O.L.I.D](http://localhost:3000/docs/category/solid) to guide us on the best way to think about different problem and choose the right abstraction level.
+Construimos todas esas pequeñas decisiones usando diferentes [Patrones de Diseño](/es/docs/category/design-patterns) mientras también seguimos principios de diseño como [S.O.L.I.D](http://localhost:3000/docs/category/solid) para guiar nosotros en la mejor manera de pensar en diferentes problemas y elegir el nivel de abstracción correcto.
 
-A new developer should be able to see the architecture and realize what the program is supposed to do, the same way that we can see different blueprints and figure out for what are those for, if we see a blueprint from a house and a blueprint for a car, is easy for someone knew to identify what the end result of those blueprints are.
+Un nuevo desarrollador debería poder ver la arquitectura y darse cuenta de lo que se supone que debe hacer el programa, de la misma manera que podemos ver diferentes planos y averiguar para qué sirven, si vemos un plano de una casa y un plano para un automóvil, es fácil para alguien saber identificar cuál es el resultado final de esos planos.
 
 [^1]: Robert C. Martin. _Clean Architecture_, First Edition, Prentice Hall, 2017, p. XVII
