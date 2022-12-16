@@ -5,139 +5,139 @@ sidebar_position: 4
 
 # The Twelve-Factor App
 
-This is a methodology on how to build SaaS applications, this best practices enable applications to be built with portability and resilience in mind, specially when deployed to the web.[^1]
+Esta es una metodología sobre cómo crear aplicaciones SaaS. Estas prácticas recomendadas permiten que las aplicaciones se creen teniendo en cuenta la portabilidad y la resiliencia, especialmente cuando se implementan en la web.[^1]
 
-This methodology was drafted by developers at [Heroku](https://www.heroku.com/).
+Esta metodología fue redactada por desarrolladores en [Heroku](https://www.heroku.com/).
 
 ## 1. Codebase
 
-> One codebase tracked in revision control, many deploys
+> Una base de código rastreada en el control de revisión, muchas implementaciones
 
-It states that everything that is related to a particular application, source code, provisioning scripts, configuration settings, and all of those artifacts are available for everyone that wishes to use the application inside the source code repository.
+Establece que todo lo relacionado con una aplicación en particular, el código fuente, los scripts de aprovisionamiento, los ajustes de configuración y todos esos artefactos están disponibles para todos los que deseen usar la aplicación dentro del repositorio del código fuente.
 
-All of these artifacts are also accessible by the automation scripts that exist in the CI/CD system.
+Todos estos artefactos también son accesibles mediante los scripts de automatización que existen en el sistema CI/CD.
 
-This system could be a revision control system like [Subversion ](https://subversion.apache.org/)or a decentralized revision control system like [Git](https://git-scm.com/).
+Este sistema podría ser un sistema de control de revisiones como [Subversion](https://subversion.apache.org/) o un sistema de control de revisiones descentralizado como [Git](https://git-scm.com/).
 
-If you have multiple codebases, that's not an app, that's a distributed system, and each component of the distributed system is an app.
+Si tiene varias bases de código, eso no es una aplicación, es un sistema distribuido y cada componente del sistema distribuido es una aplicación.
 
-> 1 codebase = 1 app
+> 1 base de código = 1 aplicación
 
-Multiple apps sharing the same code is a violation of this principle, if you want to share code across apps the best approach is to create libraries and share them across a [Dependency Manager](https://devopedia.org/dependency-manager#:~:text=A%20dependency%20manager%20operates%20at,dependency%20manager%20is%20project%20specific.).
+Múltiples aplicaciones que comparten el mismo código es una violación de este principio, si desea compartir código entre aplicaciones, el mejor enfoque es crear bibliotecas y compartirlas a través de un [Administrador de dependencia] (https://devopedia.org/dependency-manager# :~:text=A%20dependency%20manager%20opera%20at,dependency%20manager%20is%20project%20specific.).
 
-## 2. Dependencies
+## 2. Dependencias
 
-> Explicitly declare and isolate dependencies
+> Declarar y aislar dependencias explícitamente
 
-This factor describes that only the code that is relevant to the purpose of the application is stored in source control. Other external artifacts like packages, libraries, `.jar` files, or `.NET DLLs` should be referenced as dependencies.[^2]
+Este factor describe que solo el código que es relevante para el propósito de la aplicación se almacena en el control de código fuente. Se debe hacer referencia a otros artefactos externos como paquetes, bibliotecas, archivos `.jar` o `.NET DLL` como dependencias.[^2]
 
-And those should be loaded into memory at development, testing, and production runtimes. You should avoid storing the source code with the artifacts in the source code repository.
+Y esos deben cargarse en la memoria en los tiempos de ejecución de desarrollo, prueba y producción. Debe evitar almacenar el código fuente con los artefactos en el repositorio de código fuente.
 
-Examples of package managers can be found in different programming languages:
+Se pueden encontrar ejemplos de administradores de paquetes en diferentes lenguajes de programación:
 
-- [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/) for [Node.js](https://nodejs.org/en/)
-- [pip](https://pypi.org/project/pip/) for [Python](https://www.python.org/)
-- [Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) for [Java](https://www.java.com/en/).
+- [npm](https://www.npmjs.com/) y [hilo](https://yarnpkg.com/) para [Node.js](https://nodejs.org/en/)
+- [pip](https://pypi.org/project/pip/) para [Python](https://www.python.org/)
+- [Maven](https://maven.apache.org/) y [Gradle](https://gradle.org/) para [Java](https://www.java.com/en/).
 
-## 3. Configuration
+## 3. Configuración
 
-> Store config in the environment
+> Almacenar configuración en el entorno
 
-This principle states that the configuration of an application should be injected at runtime or settings defined in an independent configuration file.
+Este principio establece que la configuración de una aplicación se debe inyectar en tiempo de ejecución o la configuración se debe definir en un archivo de configuración independiente.
 
-You can have good defaults in the application that can be overridden but in the general configuration details should be stored outside of the application and be loaded at runtime, this provides flexibility for QA, Operations, CI, and developers to run and test the application if different environment without the need of recompile the application or change the source code.
+Puede tener buenos valores predeterminados en la aplicación que se pueden anular, pero en la configuración general, los detalles deben almacenarse fuera de la aplicación y cargarse en el tiempo de ejecución, esto proporciona flexibilidad para QA, Operaciones, CI y desarrolladores para ejecutar y probar la aplicación si entorno diferente sin necesidad de recompilar la aplicación o cambiar el código fuente.
 
-Examples of this are `docker-compose.yml` files or [Kubernetes](https://kubernetes.io/) `manifest files`.
+Ejemplos de esto son los archivos `docker-compose.yml` o [Kubernetes](https://kubernetes.io/) `archivos de manifiesto`.
 
 ## 4. Backing Services
 
-> Treat backing services as attached resources
+> Tratar los Backing Services como recursos adjuntos
 
-This principle establishes that architects/developers should treat external components, databases, email servers, message workers, file systems, and API services, as attached resources.
+Este principio establece que los arquitectos/desarrolladores deben tratar los componentes externos, las bases de datos, los servidores de correo electrónico, los trabajadores de mensajes, los sistemas de archivos y los servicios de API como recursos adjuntos.
 
-Meaning that it shouldn't be a strict dependency on those services, if for some reason you need to migrate from an Oracle database to a MongoDB the application should not require a big refactor.
+Lo que significa que no debería ser una dependencia estricta de esos servicios, si por alguna razón necesita migrar de una base de datos Oracle a MongoDB, la aplicación no debería requerir una gran refactorización.
 
-This behavior promotes flexibility, robustness, and efficiency in the SDLC.
+Este comportamiento promueve la flexibilidad, la solidez y la eficiencia en el SDLC.
 
-## 5. Build, Release, Run
+## 5. Construya, Lance, Ejecute
 
-> Strictly separate build and run stages
+> Etapas de construcción y ejecución estrictamente separadas
 
-When you are working on an application it needs to break down into three processes:
+Cuando está trabajando en una aplicación, debe dividirse en tres procesos:
 
-### Build
+### Construir
 
-The build stage is usually performed by the [CI](https://aws.amazon.com/devops/continuous-integration/) system, it will retrieve the changes that come from the source code repository and built/compiled artifacts, which could be [docker images](https://docs.docker.com/engine/reference/commandline/images/), `.jar` or `.war` files, packages or plain binaries, then is going to store those artifacts in an artifact repository like [Docker Hub](https://hub.docker.com/), [npm](https://www.npmjs.com/) or [Maven Registry](https://search.maven.org/).
+La etapa de compilación generalmente la realiza el sistema [CI](https://aws.amazon.com/devops/continuous-integration/), recuperará los cambios que provienen del repositorio de código fuente y los artefactos creados/compilados, que podrían ser [imágenes acoplables] (https://docs.docker.com/engine/reference/commandline/images/), archivos `.jar` o `.war`, paquetes o binarios simples, luego almacenará esos artefactos en un repositorio de artefactos como [Docker Hub](https://hub.docker.com/), [npm](https://www.npmjs.com/) o [Maven Registry](https://search.maven .org/).
 
-### Release
+### Liberar
 
-Once the artifact is uploaded by the **Build** stage, in the release stage the configurations settings are applied to the artifact that is uploaded.
+Una vez que la etapa de **Creación** carga el artefacto, en la etapa de lanzamiento, los ajustes de configuración se aplican al artefacto que se carga.
 
-The [Configuration](#configuration) is loaded from the environment.
+La [Configuración](#configuración) se carga desde el entorno.
 
-### Run
+### Correr
 
-At this stage, the runtime is provisioned with the configuration from the release stage and then is run. This could be in the form of a [Docker Container](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system%20libraries%20and%20settings) or stand-alone processes.
+En esta etapa, el tiempo de ejecución se aprovisiona con la configuración de la etapa de lanzamiento y luego se ejecuta. Esto podría tener la forma de un [Contenedor Docker](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system %20libraries%20and%20settings) o procesos independientes.
 
-## 6. Processes
+## 6. Procesos
 
-> Execute the app as one or more stateless processes
+> Ejecutar la aplicación como uno o más procesos sin estado
 
-When developing an application we need to think about building it as a stateless process, meaning that we should not rely on the state of the application to be stored in memory.
+Al desarrollar una aplicación, debemos pensar en construirla como un proceso sin estado, lo que significa que no debemos confiar en el estado de la aplicación para almacenarla en la memoria.
 
-The application should not keep track the state of another application, and also should not keep track of information like session or workflow status, this should be outsource to a [Backing Services](#backing-services).
+La aplicación no debe realizar un seguimiento del estado de otra aplicación, y tampoco debe realizar un seguimiento de información como la sesión o el estado del flujo de trabajo, esto debe subcontratarse a [Servicios de respaldo] (#backing-services).
 
-If we make application stateless are easier to reason about, are easier to scale and also makes them easier to operate independently of one another since we do not need to worry about unintended side effects.
+Si hacemos que la aplicación sea sin estado, es más fácil razonar, son más fáciles de escalar y también las hace más fáciles de operar de forma independiente, ya que no tenemos que preocuparnos por los efectos secundarios no deseados.
 
-## 7. Port Binding
+## 7. Asignación de Puertos
 
-> Export services via port binding
+> Servicios de exportación a través de la vinculación de puertos
 
-Applications should be identifiable by their port number and not a domain name, the main reason for this is that domain names and IP addresses can be performed on the fly, either by manual manipulation or [Service Discovery](https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/) systems like [Istio](https://istio.io/) or [Consul](https://www.consul.io/).
+Las aplicaciones deben ser identificables por su número de puerto y no por un nombre de dominio, la razón principal de esto es que los nombres de dominio y las direcciones IP se pueden realizar sobre la marcha, ya sea mediante manipulación manual o [Detección de servicios] (https://www.nginx .com/blog/service-discovery-in-a-microservices-architecture/) sistemas como [Istio](https://istio.io/) o [Consul](https://www.consul.io/).
 
-Potential issues like port collision are easier to detect and handle by using [Port Forwarding](https://portforward.com/).
+Los posibles problemas, como la colisión de puertos, son más fáciles de detectar y manejar mediante el [Reenvío de puertos] (https://portforward.com/).
 
-## 8. Concurrency
+## 8. Concurrencia
 
-> Scale out via the process model
+> Escalar horizontalmente a través del modelo de proceso
 
-This principle recommends organizing processes (Apps) according to their purpose and splitting them into multiple processes so they can be scaled up and down accordingly.
+Este principio recomienda organizar los procesos (aplicaciones) de acuerdo con su propósito y dividirlos en múltiples procesos para que puedan escalarse hacia arriba y hacia abajo en consecuencia.
 
-One of the downsides of Monolithic applications besides organizational issues is that to be able to scale them horizontally you need to scale the entire system, even if it's not required because only one of the modules is the one that is receiving more of the traffic.
+Una de las desventajas de las aplicaciones Monolíticas además de las cuestiones organizativas es que para poder escalarlas horizontalmente es necesario escalar todo el sistema, incluso si no es necesario porque solo uno de los módulos es el que está recibiendo más tráfico.
 
-If a microservice architecture is used, and each microservice handles a single functionality is easier just to scale that service instead of the entire system, while the rest of the system remains the same.
+Si se utiliza una arquitectura de microservicio, y cada microservicio maneja una sola funcionalidad, es más fácil escalar ese servicio en lugar de todo el sistema, mientras que el resto del sistema permanece igual.
 
-## 9. Disposability
+## 9. Desechabilidad
 
-> Maximize robustness with fast startup and graceful shutdown
+> Maximice la solidez con un inicio rápido y un apagado ordenado
 
-This principle states that applications should startup quickly and shut down gracefully, this means that the application handles everything that it needs before it starts serving users and it also takes care of removing all the existing connections and resources that are allocated to it before it shut down.
+Este principio establece que las aplicaciones deben iniciarse rápidamente y cerrarse correctamente, lo que significa que la aplicación maneja todo lo que necesita antes de comenzar a atender a los usuarios y también se encarga de eliminar todas las conexiones y recursos existentes que se le asignan antes de que se cierre. .
 
-## 10. Development/production parity
+## 10. Paridad desarrollo/producción
 
-> Keep development, staging, and production as similar as possible
+> Mantenga el desarrollo, la puesta en escena y la producción lo más similares posible
 
-This principle states that as a company the `development`, `staging` and `production` should be as closed as possible meaning that there isn't a big difference in version between each other.
+Este principio establece que, como empresa, el "desarrollo", la "puesta en escena" y la "producción" deben ser lo más cerrados posible, lo que significa que no hay una gran diferencia de versión entre ellos.
 
-Meaning that versions/features from development should not be drastically different from what exists in production.
+Lo que significa que las versiones/características del desarrollo no deberían ser drásticamente diferentes de lo que existe en producción.
 
-Once a version of development is ready to be put in production CI will follow the process of [Build, Release, Run](#build-release-run) by running the settings that are set for production.
+Una vez que una versión de desarrollo está lista para ser puesta en producción, CI seguirá el proceso de [Construir, Liberar, Ejecutar] (#construir-liberar-ejecutar) mediante la ejecución de la configuración establecida para la producción.
 
-## 11. Logs
+## 11. Registros
 
-> Treat logs as event streams
+> Tratar los registros como flujos de eventos
 
-In general, logs should be viewed as a stream of information that should be stored, parse and process so interested parties can consume it.
+En general, los registros deben verse como un flujo de información que debe almacenarse, analizarse y procesarse para que las partes interesadas puedan consumirla.
 
-The routing process of capturing the logs should be different from the process of processing the log data.
+El proceso de enrutamiento para capturar los registros debe ser diferente del proceso de procesamiento de los datos de registro.
 
-## 12. Admin Processes
+## 12. Procesos de administración
 
-> Run admin/management tasks as one-off processes
+> Ejecutar tareas de administración/gestión como procesos únicos
 
-When developing an application usually there are some admin task that needs to be performed like database migration, console logs or running one-time scripts.
+Cuando se desarrolla una aplicación, generalmente hay algunas tareas administrativas que deben realizarse, como la migración de la base de datos, los registros de la consola o la ejecución de scripts únicos.
 
-This programs should run in an identical environment like the long-running process, they are run against a release using the same codebase and configuration, this admin code should ship the application code as well to avoid synchronization issues.
+Estos programas deben ejecutarse en un entorno idéntico como el proceso de ejecución prolongada, se ejecutan en una versión que utiliza la misma base de código y configuración, este código de administración también debe incluir el código de la aplicación para evitar problemas de sincronización.
 
 [^1]: Adam Wiggins. 'The Twelve-Factor App', 2017, https://12factor.net/.
 [^2]: Bob Reselman. 'An illustrated guide to 12 Factor Apps', 2021, https://www.redhat.com/architect/12-factor-app.
