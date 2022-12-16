@@ -1,0 +1,8 @@
+{
+  "label": "SOLID",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Los principios SOLID son cinco principios del diseño de clases orientado a objetos. Son un conjunto de reglas y mejores prácticas a seguir al diseñar una estructura de clase. Estos cinco principios nos ayudan a comprender la necesidad de ciertos patrones de diseño y arquitectura de software en general."
+  }
+}

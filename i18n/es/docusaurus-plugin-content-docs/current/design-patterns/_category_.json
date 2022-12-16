@@ -1,0 +1,9 @@
+{
+  "label": "Patrones de diseño",
+  "position": 3,
+  "link": {
+    "title": "Patrones de diseño",
+    "type": "generated-index",
+    "description": "Los patrones de diseño son soluciones típicas a problemas comunes en el diseño de software. Cada patrón es como un modelo que puede personalizar para resolver un problema de diseño particular en su código."
+  }
+}

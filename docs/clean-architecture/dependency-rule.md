@@ -9,7 +9,7 @@ When you are developing a software using the clean architecture you have differe
 
 ![Dependency Rule](./images/dependency-rule.png)
 
-> Source code dependencies must point only inwards, towards higher-level policies [^2]
+> Source code dependencies must point only inwards, towards higher-level policies [^1]
 
 This basically tell us that the outer circles are just implementation details of the program, the program itself should not rely on those circle but abstractions that represent those circles, the core of the program is in the inner circles which are the business logic.
 
@@ -45,4 +45,4 @@ This is the outermost layer in the diagram and is composed of frameworks and too
 
 Every technology that is used beside the program itself is considered a detail.
 
-[^2]: Robert C. Martin, 'The Clean Architecture Dependency Rule', _InformIT_, https://www.informit.com/articles/article.aspx?p=2832399
+[^1]: Robert C. Martin, 'The Clean Architecture Dependency Rule', _InformIT_, https://www.informit.com/articles/article.aspx?p=2832399

@@ -3,6 +3,6 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "SOLID Principles"
+    "description": "Software design philosophy that separates the elements of a design into ring levels."
   }
 }
