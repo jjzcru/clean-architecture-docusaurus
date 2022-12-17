@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "From Dirty to Clean",
+  tagline: "From Dirty to Clean",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -74,6 +74,7 @@ const config = {
         logo: {
           alt: "Clean Architecture Logo",
           src: "img/logo.svg",
+          srcDark: 'img/logo_dark.svg',
         },
         items: [
           {
@@ -103,22 +104,42 @@ const config = {
                 label: "Course",
                 to: "/docs/intro",
               },
+              {
+                label: "S.O.L.I.D.",
+                to: "/docs/category/solid"
+              },
+              {
+                label: "Design Patterns",
+                to: "/docs/category/design-patterns"
+              },
+              {
+                label: "The Twelve-Factor App",
+                to: "/docs/twelve-factor-app"
+              },
+              {
+                label: "Clean Architecture",
+                to: "/docs/category/clean-architecture"
+              },
+              {
+                label: "Git",
+                to: "/docs/category/git"
+              }
             ],
           },
           {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Medium",
+                href: "https://medium.com/@jjzcru",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/jjzcru/",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://twitter.com/jjzcru",
               },
             ],
           },
@@ -127,7 +148,7 @@ const config = {
             items: [
               {
                 label: "Blog",
-                to: "/blog",
+                to: "https://medium.com/@jjzcru",
               },
               {
                 label: "GitHub",
@@ -136,7 +157,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} From Dirty to Clean, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
