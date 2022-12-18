@@ -23,7 +23,7 @@ En una bifurcación, inicia un nuevo proyecto desde un punto específico en el t
 
 Esto se refiere a la última confirmación en una rama en particular, y cuando agrega una nueva confirmación, las diferentes se realizan contra esta confirmación, y una vez que se realiza una confirmación, la última confirmación se convertirá en el nuevo `HEAD`.
 
-Siguiendo la analogía de la serie, el último episodio de una serie sería la `HEAD` en una 'rama'.
+Siguiendo la analogía de la serie, el último episodio de una serie sería la `HEAD` en un `branch`.
 
 ## Hook
 

@@ -23,7 +23,7 @@ Si tiene varias bases de código, eso no es una aplicación, es un sistema distr
 
 > 1 base de código = 1 aplicación
 
-Múltiples aplicaciones que comparten el mismo código es una violación de este principio, si desea compartir código entre aplicaciones, el mejor enfoque es crear bibliotecas y compartirlas a través de un [Administrador de dependencia] (https://devopedia.org/dependency-manager# :~:text=A%20dependency%20manager%20opera%20at,dependency%20manager%20is%20project%20specific.).
+Múltiples aplicaciones que comparten el mismo código es una violación de este principio, si desea compartir código entre aplicaciones, el mejor enfoque es crear bibliotecas y compartirlas a través de un [Administrador de dependencia](https://devopedia.org/dependency-manager).
 
 ## 2. Dependencias
 
@@ -35,7 +35,7 @@ Y esos deben cargarse en la memoria en los tiempos de ejecución de desarrollo, 
 
 Se pueden encontrar ejemplos de administradores de paquetes en diferentes lenguajes de programación:
 
-- [npm](https://www.npmjs.com/) y [hilo](https://yarnpkg.com/) para [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/) y [yarn](https://yarnpkg.com/) para [Node.js](https://nodejs.org/en/)
 - [pip](https://pypi.org/project/pip/) para [Python](https://www.python.org/)
 - [Maven](https://maven.apache.org/) y [Gradle](https://gradle.org/) para [Java](https://www.java.com/en/).
 
@@ -67,7 +67,7 @@ Cuando está trabajando en una aplicación, debe dividirse en tres procesos:
 
 ### Construir
 
-La etapa de compilación generalmente la realiza el sistema [CI](https://aws.amazon.com/devops/continuous-integration/), recuperará los cambios que provienen del repositorio de código fuente y los artefactos creados/compilados, que podrían ser [imágenes acoplables] (https://docs.docker.com/engine/reference/commandline/images/), archivos `.jar` o `.war`, paquetes o binarios simples, luego almacenará esos artefactos en un repositorio de artefactos como [Docker Hub](https://hub.docker.com/), [npm](https://www.npmjs.com/) o [Maven Registry](https://search.maven .org/).
+La etapa de compilación generalmente la realiza el sistema [CI](https://aws.amazon.com/devops/continuous-integration/), recuperará los cambios que provienen del repositorio de código fuente y los artefactos creados/compilados, que podrían ser [Container Images](https://docs.docker.com/engine/reference/commandline/images/), archivos `.jar` o `.war`, paquetes o binarios simples, luego almacenará esos artefactos en un repositorio de artefactos como [Docker Hub](https://hub.docker.com/), [npm](https://www.npmjs.com/) o [Maven Registry](https://search.maven.org/).
 
 ### Liberar
 
@@ -77,7 +77,7 @@ La [Configuración](#configuración) se carga desde el entorno.
 
 ### Correr
 
-En esta etapa, el tiempo de ejecución se aprovisiona con la configuración de la etapa de lanzamiento y luego se ejecuta. Esto podría tener la forma de un [Contenedor Docker](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system %20libraries%20and%20settings) o procesos independientes.
+En esta etapa, el tiempo de ejecución se aprovisiona con la configuración de la etapa de lanzamiento y luego se ejecuta. Esto podría tener la forma de un [Contenedor Docker](https://www.docker.com/resources/what-container/) o procesos independientes.
 
 ## 6. Procesos
 
@@ -85,7 +85,7 @@ En esta etapa, el tiempo de ejecución se aprovisiona con la configuración de l
 
 Al desarrollar una aplicación, debemos pensar en construirla como un proceso sin estado, lo que significa que no debemos confiar en el estado de la aplicación para almacenarla en la memoria.
 
-La aplicación no debe realizar un seguimiento del estado de otra aplicación, y tampoco debe realizar un seguimiento de información como la sesión o el estado del flujo de trabajo, esto debe subcontratarse a [Servicios de respaldo] (#backing-services).
+La aplicación no debe realizar un seguimiento del estado de otra aplicación, y tampoco debe realizar un seguimiento de información como la sesión o el estado del flujo de trabajo, esto debe subcontratarse a [Servicios de respaldo](#backing-services).
 
 Si hacemos que la aplicación sea sin estado, es más fácil razonar, son más fáciles de escalar y también las hace más fáciles de operar de forma independiente, ya que no tenemos que preocuparnos por los efectos secundarios no deseados.
 
@@ -93,9 +93,9 @@ Si hacemos que la aplicación sea sin estado, es más fácil razonar, son más f
 
 > Servicios de exportación a través de la vinculación de puertos
 
-Las aplicaciones deben ser identificables por su número de puerto y no por un nombre de dominio, la razón principal de esto es que los nombres de dominio y las direcciones IP se pueden realizar sobre la marcha, ya sea mediante manipulación manual o [Detección de servicios] (https://www.nginx .com/blog/service-discovery-in-a-microservices-architecture/) sistemas como [Istio](https://istio.io/) o [Consul](https://www.consul.io/).
+Las aplicaciones deben ser identificables por su número de puerto y no por un nombre de dominio, la razón principal de esto es que los nombres de dominio y las direcciones IP se pueden realizar sobre la marcha, ya sea mediante manipulación manual o [Detección de servicios](https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/) sistemas como [Istio](https://istio.io/) o [Consul](https://www.consul.io/).
 
-Los posibles problemas, como la colisión de puertos, son más fáciles de detectar y manejar mediante el [Reenvío de puertos] (https://portforward.com/).
+Los posibles problemas, como la colisión de puertos, son más fáciles de detectar y manejar mediante [Port Forwarding](https://portforward.com/).
 
 ## 8. Concurrencia
 
@@ -121,7 +121,7 @@ Este principio establece que, como empresa, el "desarrollo", la "puesta en escen
 
 Lo que significa que las versiones/características del desarrollo no deberían ser drásticamente diferentes de lo que existe en producción.
 
-Una vez que una versión de desarrollo está lista para ser puesta en producción, CI seguirá el proceso de [Construir, Liberar, Ejecutar] (#construir-liberar-ejecutar) mediante la ejecución de la configuración establecida para la producción.
+Una vez que una versión de desarrollo está lista para ser puesta en producción, CI seguirá el proceso de [Construir, Liberar, Ejecutar](#construir-liberar-ejecutar) mediante la ejecución de la configuración establecida para la producción.
 
 ## 11. Registros
 

@@ -7,7 +7,7 @@ description: A branching model to achieve flow
 
 ![Flujo de trabajo de Gitflow](./images/gitflow-workflow.png)
 
-Gitflow es un modelo de bifurcación de git que implica el uso de un conjunto de funciones, auxiliares y múltiples ramas primarias para desarrollar software. Fue presentado por [Vincent Driessen en Nvie] (http://nvie.com/posts/a-successful-git-branching-model/).
+Gitflow es un modelo de bifurcación de git que implica el uso de un conjunto de funciones, auxiliares y múltiples ramas primarias para desarrollar software. Fue presentado por [Vincent Driessen en Nvie](http://nvie.com/posts/a-successful-git-branching-model/).
 
 El concepto principal es que tiene dos ramas principales de larga duración llamadas `develop` y `main` que son paralelas entre sí y usan otras ramas auxiliares como `feature`, `hotfix` y `release` para fusionar cambios de uno a el otro.
 

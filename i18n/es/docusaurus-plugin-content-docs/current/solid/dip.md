@@ -34,4 +34,4 @@ y [DTO](https://www.okta.com/identity-101/dto/).
 _¿Cómo podemos usar cosas como bases de datos si esos son componentes volátiles?_
 
 Creas abstracciones que describen el comportamiento y hacen que tu programa
-confiar en ese comportamiento, esta abstracción podría ser [Fábricas] (https://www.tutorialspoint.com/design_pattern/factory_pattern.htm), [Repositorios] (https://deviq.com/design-patterns/repository-pattern) o [Fachadas](https://www.geeksforgeeks.org/facade-design-pattern-introduction/).
+confiar en ese comportamiento, esta abstracción podría ser [Fábricas](https://www.tutorialspoint.com/design_pattern/factory_pattern.htm), [Repositorios](https://deviq.com/design-patterns/repository-pattern) o [Fachadas](https://www.geeksforgeeks.org/facade-design-pattern-introduction/).

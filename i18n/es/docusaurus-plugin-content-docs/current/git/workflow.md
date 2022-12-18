@@ -27,7 +27,7 @@ Si necesita mover un archivo al 'Área de preparación', debe realizar un 'git a
 
 ## Staging Area
 
-Este es el término medio entre lo que ha hecho con su archivo, [Directorio de trabajo](# Working Directory), y lo último que ha confirmado, [Commit HEAD](https://initialcommit.com/blog/what-is-git-head).
+Este es el término medio entre lo que ha hecho con su archivo, [Directorio de trabajo](#working-directory), y lo último que ha confirmado, [Commit HEAD](https://initialcommit.com/blog/what-is-git-head).
 
 Esto le permite preparar lo que sería el próximo [commit](https://www.atlassian.com/git/tutorials/saving-changes/git-commit) y también le brinda las herramientas para saber fácilmente qué está pasando.
 

@@ -27,7 +27,7 @@ implementación diferente para cada uno, pero la razón principal de la colecci�
 un almacenamiento de los datos, para arreglar esto desacoplamos el recorrido de los datos
 estructura en un iterador.
 
-Podríamos tener un [Iterador primero en profundidad] (https://www.geeksforgeeks.org/ depth-first-search-or-dfs-for-a-graph/) o un [Iterador primero en amplitud] (https:/ /www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/) que maneja
+Podríamos tener un [Búsqueda en profundidad](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/) o un [Búsqueda en anchura](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/) que maneja
 diferentes tipos de recorrido, pero los datos subyacentes
 estructura, el [Árbol](https://www.javatpoint.com/tree), sigue siendo el mismo.
 
