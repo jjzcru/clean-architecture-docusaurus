@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Clean Architecture",
+    "description": "The title in the navbar"
+  },
+  "item.label.Content": {
+    "message": "Content",
+    "description": "Navbar item with label Content"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

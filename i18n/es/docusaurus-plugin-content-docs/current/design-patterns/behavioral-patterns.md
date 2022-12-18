@@ -3,7 +3,7 @@ sidebar_position: 4
 description: Centrarse en los algoritmos y la asignación de responsabilidades entre objetos
 ---
 
-# Patrones de Diseño de Comportamiento
+# Patrones de Comportamiento
 
 > Los patrones de comportamiento están relacionados con los algoritmos y la asignación de
 > responsabilidades entre objetos.

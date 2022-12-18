@@ -3,7 +3,7 @@ sidebar_position: 3
 description: Reúna objetos y clases en estructuras más grandes, manteniendo estas estructuras flexibles y eficientes.
 ---
 
-# Patrones de Diseño Estructural
+# Patrones Estructurales
 
 Este tipo de patrones explica cómo podemos ensamblar objetos y clases en
 estructuras más grandes, manteniendo estas estructuras flexibles y eficientes.
