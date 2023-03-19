@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -9,6 +9,9 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  useEffect(() => {
+    window.location.href = '/docs/intro';
+  }, []);
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
