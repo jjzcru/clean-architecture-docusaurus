@@ -9,7 +9,7 @@ Cuando hablamos de arquitectura de software podemos pensar de la misma manera qu
 
 > La arquitectura representa las decisiones significativas que dan forma a un sistema, donde lo significativo se mide por el costo del cambio [^1]
 >
-> > Puesto Grady
+> > Grady Booth
 
 La arquitectura son todos los pequeños detalles que soportan todas las decisiones de alto nivel.
 

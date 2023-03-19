@@ -1,0 +1,62 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Content": {
+    "message": "Content",
+    "description": "The label of footer link with label=Content linking to /docs/intro"
+  },
+  "link.item.label.S.O.L.I.D.": {
+    "message": "S.O.L.I.D.",
+    "description": "The label of footer link with label=S.O.L.I.D. linking to /docs/category/solid"
+  },
+  "link.item.label.Design Patterns": {
+    "message": "Design Patterns",
+    "description": "The label of footer link with label=Design Patterns linking to /docs/category/design-patterns"
+  },
+  "link.item.label.The Twelve-Factor App": {
+    "message": "The Twelve-Factor App",
+    "description": "The label of footer link with label=The Twelve-Factor App linking to /docs/twelve-factor-app"
+  },
+  "link.item.label.Clean Architecture": {
+    "message": "Clean Architecture",
+    "description": "The label of footer link with label=Clean Architecture linking to /docs/category/clean-architecture"
+  },
+  "link.item.label.Git": {
+    "message": "Git",
+    "description": "The label of footer link with label=Git linking to /docs/category/git"
+  },
+  "link.item.label.Medium": {
+    "message": "Medium",
+    "description": "The label of footer link with label=Medium linking to https://medium.com/@jjzcru"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/in/jjzcru/"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/jjzcru"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to https://medium.com/@jjzcru"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 From Dirty to Clean, Inc. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

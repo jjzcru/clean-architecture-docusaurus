@@ -3,7 +3,7 @@ sidebar_position: 2
 description: Proporcionar múltiples mecanismos de creación de objetos.
 ---
 
-# Patrones de Diseño Creacional
+# Patrones Creacionales
 
 Los patrones de diseño creativo son patrones que proporcionan la creación de múltiples objetos.
 mecanismos, logran esto abstrayendo el proceso de creación de instancias.

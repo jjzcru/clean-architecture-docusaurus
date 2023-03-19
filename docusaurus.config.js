@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
 	title: 'From Dirty to Clean',
 	tagline: 'From Dirty to Clean',
-	url: 'https://your-docusaurus-test-site.com',
+	url: 'https://clean.fennex.dev',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -152,7 +152,7 @@ const config = {
 							},
 							{
 								label: 'GitHub',
-								href: 'https://github.com/facebook/docusaurus',
+								href: 'https://github.com/jjzcru/clean-architecture-docusaurus',
 							},
 						],
 					},

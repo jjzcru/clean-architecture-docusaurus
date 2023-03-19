@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.SOLID": {
+    "message": "SOLID",
+    "description": "The label for category SOLID in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SOLID.link.generated-index.description": {
+    "message": "Los principios SOLID son cinco principios del diseño de clases orientado a objetos. Son un conjunto de reglas y mejores prácticas a seguir al diseñar una estructura de clase. Estos cinco principios nos ayudan a comprender la necesidad de ciertos patrones de diseño y arquitectura de software en general.",
+    "description": "The generated-index page description for category SOLID in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Design Patterns": {
+    "message": "Patrones de Diseño",
+    "description": "The label for category Design Patterns in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Design Patterns.link.generated-index.description": {
+    "message": "Los patrones de diseño son soluciones típicas a problemas comunes en el diseño de software. Cada patrón es como un modelo que puede personalizar para resolver un problema de diseño particular en su código.",
+    "description": "The generated-index page description for category Design Patterns in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Clean Architecture": {
+    "message": "Clean Architecture",
+    "description": "The label for category Clean Architecture in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Clean Architecture.link.generated-index.description": {
+    "message": "Software design philosophy that separates the elements of a design into ring levels.",
+    "description": "The generated-index page description for category Clean Architecture in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Git": {
+    "message": "Git",
+    "description": "The label for category Git in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Git.link.generated-index.description": {
+    "message": "SOLID Principles",
+    "description": "The generated-index page description for category Git in sidebar tutorialSidebar"
+  }
+}
