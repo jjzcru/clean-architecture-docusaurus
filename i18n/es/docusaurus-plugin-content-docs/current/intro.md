@@ -3,7 +3,7 @@ title: Introducción
 sidebar_position: 1
 ---
 
-# From Dirty to Clean
+# Clean Architecture Fundamentals
 
 Este es un curso introductorio que enseña a los desarrolladores cómo crear una aplicación escalable y también cómo pueden colaborar entre sí.
 
