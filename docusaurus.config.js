@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'From Dirty to Clean',
-	tagline: 'From Dirty to Clean',
+	title: 'Clean Architecture Fundamentals',
+	tagline: 'Clean Architecture Fundamentals',
 	url: 'https://clean.fennex.dev',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
@@ -157,7 +157,7 @@ const config = {
 						],
 					},
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} From Dirty to Clean, Inc. Built with Docusaurus.`,
+				copyright: `Copyright © ${new Date().getFullYear()} Clean Architecture Fundamentals, Inc. Built with Docusaurus.`,
 			},
 			prism: {
 				theme: lightCodeTheme,
