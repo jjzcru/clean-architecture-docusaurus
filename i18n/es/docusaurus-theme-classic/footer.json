@@ -56,7 +56,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
   },
   "copyright": {
-    "message": "Copyright © 2022 From Dirty to Clean, Inc. Built with Docusaurus.",
+    "message": "Copyright © 2022 Clean Architecture Fundamentals, Inc. Built with Docusaurus.",
     "description": "The footer copyright"
   }
 }
